@@ -1,0 +1,188 @@
+{
+  "info": {
+    "_postman_id": "3183f375-836b-481a-9ec9-f0b0034115a8",
+    "name": "LINKINT ",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "create Air Port",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n        \"_id\": \"611d1a4576bfea0042c043d4\",\n        \"name\": \"London City Airport\",\n        \"description\": \"London City Airport is an international airport in London, England. It is located in the Royal Docks in the London Borough of Newham, approximately 7 miles east of the City of London and a shorter distance east of Canary Wharf.\",\n        \"city\": \"London\",\n        \"code\": \"LCY\"\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3002/api/v1/airPorts",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3002",
+          "path": ["api", "v1", "airPorts"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "search query",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3002/api/v1/airPorts/search?q=l",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3002",
+          "path": ["api", "v1", "airPorts", "search"],
+          "query": [
+            {
+              "key": "q",
+              "value": "l"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAll airports",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3002/api/v1/airPorts/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3002",
+          "path": ["api", "v1", "airPorts", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update airport by Id ",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n        \"name\": \"Frankfurt Airport\",\n        \"description\": \"Frankfurt Airport is a major international airport located in Frankfurt, the fifth-largest city of Germany and one of the world's leading financial centres. It is operated by Fraport and serves as the main hub for Lufthansa including Lufthansa CityLine and Lufthansa Cargo as well as Condor and AeroLogic\",\n        \"city\": \"Frankfurt\",\n        \"code\": \"FRA\"\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3002/api/v1/airPorts/611fc653dead5f006eff9a90",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3002",
+          "path": ["api", "v1", "airPorts", "611fc653dead5f006eff9a90"],
+          "query": [
+            {
+              "key": "city",
+              "value": "London",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create flight",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"from\": \"61212029d29184004d63844e\",\n    \"to\": \"6123509f175a75001fa58cb6\",\n    \"time\": \"09:55\",\n    \"price\": 47\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3002/api/v1/flights",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3002",
+          "path": ["api", "v1", "flights"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get all flights",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3002/api/v1/flights/",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3002",
+          "path": ["api", "v1", "flights", ""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "find flight",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:3002/api/v1/flights/findFlight?from=61212030d29184004d63844f&to=61212033d29184004d638450",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3002",
+          "path": ["api", "v1", "flights", "findFlight"],
+          "query": [
+            {
+              "key": "from",
+              "value": "61212030d29184004d63844f"
+            },
+            {
+              "key": "to",
+              "value": "61212033d29184004d638450"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create reservation ",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"flightId\": \"61237d5d25ce9a001fb4abe2\",\n    \"email\": \"amirboouker@gmail.com\",\n    \"fullName\": \"amir bouker\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:3002/api/v1/reservations",
+          "protocol": "http",
+          "host": ["127", "0", "0", "1"],
+          "port": "3002",
+          "path": ["api", "v1", "reservations"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
